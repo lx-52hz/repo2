@@ -11,6 +11,7 @@ public class User {
     private Integer age;
     private String gender;
     private String address;
+	private Integer money;
 
     public User(Integer id, String userName, Date birthday, Integer age, String gender, String address) {
         this.id = id;
