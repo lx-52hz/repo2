@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--    实体类去别名-->
+    <typeAliases>
+        <package name="com.chinasoft.domain"/>
+    </typeAliases>
+
+<!--    环境配置-->
+    <environments default="mysql">
+
+<!--        配置MySQL的环境-->
+        <environment id="mysql">
+<!--            配置事务管理器-->
+            <transactionManager type="JDBC"></transactionManager>
+<!--            配置数据源 数据库连接池-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql:///db01?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+
+<!--    配置映射器-->
+    <mappers>
+<!--        指定配置文件的地址-->
+<!--        <mapper resource="com/chinasoft/mapper/IUserMapper.xml"/>-->
+        <package name="com.chinasoft.mapper"/>
+    </mappers>
+
+
+</configuration>
